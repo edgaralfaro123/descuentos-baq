@@ -30,13 +30,15 @@ function MyComponent() {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
+        <div class='row'>
+          <div class='col-lg-4'></div>
           {irems.map(item => (
-            <li key={item.descripcion}>
+            <div class='col-lg-4' key={item.descripcion}>
               {item.descripcion} {item.precio}
-            </li>
+            </div>
           ))}
-        </ul>
+          <div class='col-lg-4'></div>
+        </div>
       );
     }
   }

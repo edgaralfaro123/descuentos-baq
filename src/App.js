@@ -35,13 +35,39 @@ function App() {
     return <div>Loading...</div>;
   } else {
     return (
-      <ul>
-        {items.map(item => (
-          <li key={item.descripcion}>
-            {item.descripcion} {item.precio}
-          </li>
+      <div class='row'>
+        <div class='col-sm-12 pading'> </div>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-8 '>
+          <center><a class="display-4"><strong> En cuanto me queda?</strong></a></center>
+          <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Que producto deseas comprar hoy?"></input>
+        </div>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-12 pading'> </div>
+        <div class="card-deck-wrapper">
+        <div class="card-deck">
+          {items.map(item => (
+          <div class='col-sm-3'>
+            <div class="card" key={item.descripcion}>
+              <img class="card-img-top" src={item.urlimagen} alt="Card image cap"/>
+              <div class="card-img-overlay descuento">
+                <a class="btn btn-sm btn-danger float-right"><strong>{item.descuento}%</strong></a>
+              </div>           
+              <div class="card-body">
+                <h5 class="card-title">{item.descripcion}</h5>
+                <div class="bottom-wrap">
+                <a href="" class="btn btn-sm btn-primary float-right">Visitar</a>
+                <div class="price-wrap h5">
+					        <span class="price-new precioHoy">${item.precio}</span> <del class="price-old">${item.precioanterior}</del>
+				        </div>
+              </div>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+          </div>
+        </div>
+      </div>
     );
   }
 }

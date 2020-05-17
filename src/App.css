@@ -12,7 +12,18 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.pading{
+  padding-top: 30px;
+}
+.descuento{
+  color:white;
+}
+.precioHoy{
+  color:red;
+}
+.precioAnterior{
+  text-decoration:line-through;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
