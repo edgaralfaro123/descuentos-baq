@@ -33,8 +33,23 @@ function App() {
 const buscarArticulos = async () => {
   //productRef.current.focus();
   let value=productRef.current.value;
-
+/*   console.log(items);
+  let arraynuevo=items.map(item=>(
+    item.filter(value)
+  )); 
+  console.log(arraynuevo); */
   let url = `https://cuentasporcobrar.herokuapp.com/descuento/${value}`;
+  fetch(url)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data)=> {
+    console.log(data);
+  })
+  .catch((err)=>{
+    console.error(err);
+  })
+  /* 
   console.log(url);
   const response = await fetch(url);
   const data = await response.json();
@@ -45,14 +60,9 @@ const buscarArticulos = async () => {
     // si vienen datos en la respuesta
   } else {
     console.log(`No se encontro ningun datos relacionado con la busqueda.`);
-/*       Swal.fire({
-          title: 'Advertencia!',
-          text: 'No se encontro ningun datos relacionado con la busqueda',
-          icon: 'info',
-          timer: 1000,
-          timerProgressBar: true,
-      }); */
-  }
+
+  } */
+
 }
 
   if (error) {
@@ -69,6 +79,9 @@ const buscarArticulos = async () => {
           <input type="text" className="form-control" ref={productRef} aria-describedby="emailHelp" placeholder="Que producto deseas comprar hoy?"></input>
         </div>
         <div className='col-sm-2'>
+          <br/>
+          <br/>
+          <br/>
           <button className="btn btn-danger" onClick={buscarArticulos}>Buscar</button>
         </div>
         <div className='col-sm-2'></div>
