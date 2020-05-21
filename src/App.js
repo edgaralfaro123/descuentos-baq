@@ -38,22 +38,39 @@ const buscarArticulos = async () => {
     item.filter(value)
   )); 
   console.log(arraynuevo); */
-  let url = `https://cuentasporcobrar.herokuapp.com/descuento/${value}`;
+  let url = `https://cuentasporcobrar.herokuapp.com/descuentos/producto/${value}`;
   fetch(url)
   .then((response) => {
     return response.json();
   })
-  .then((data)=> {
-    console.log(data);
+  .then((result)=> {
+    setItems(result);
+    console.log(result);
+    {items.map(item => (
+      <div className='col-sm-3'>
+        <div className="card" key={item.codigo}>
+          <img className="card-img-top" src={item.urlimagen} alt="Card image cap"/>
+          <div className="card-img-overlay descuento">
+            <a className="btn btn-sm btn-danger float-right"><strong>{item.descuento}%</strong></a>
+          </div>           
+          <div className="card-body">
+            <h5 className="card-title">{item.descripcion}</h5>
+            <div className="bottom-wrap">
+            <a href="" className="btn btn-sm btn-primary float-right">Visitar</a>
+            <div className="price-wrap h5">
+              <span className="price-new precioHoy">${item.precio}</span> <del className="price-old">${item.precioanterior}</del>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    ))}
   })
   .catch((err)=>{
     console.error(err);
   })
   /* 
   console.log(url);
-  const response = await fetch(url);
-  const data = await response.json();
-
   if(data.result.length === 0){
     //arroja un error si no coinciden los datos
     console.log(`arroja un error si no coinciden los datos`);
