@@ -31,7 +31,7 @@ const Product = () =>{
     <div className="container">
     <div className="row">
     { items.map(item =>(
-      <div className='col-sm-3'>
+      <div className='col-sm-3' key={item.codigo}>
         <div className="card">
           <img className="card-img-top" src={item.urlimagen} alt="Card image cap"/>
           <div className="card-img-overlay descuento">
