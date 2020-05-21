@@ -2,6 +2,7 @@
 import React, { useState, useEffect,useRef  } from 'react';
 import './App.css';
 import Product from "./components/products";
+import Header from "./components/header";
 
 const App = () => {
   const productRef = useRef();
@@ -15,7 +16,6 @@ const App = () => {
       return response.json();
     })
     .then((result)=> {
-
       setSearch(result);
       console.log(result);
     })
@@ -25,18 +25,12 @@ const App = () => {
   }
 
   return(
-    <div className='row'>
-      <div className='col-sm-12 pading'>
-        <center><a className="display-4"><strong> En cuanto me queda?</strong></a></center>
-        <input type="text" className="form-control" ref={productRef} aria-describedby="emailHelp" placeholder="Que producto deseas comprar hoy?"></input>
-        <button className="btn btn-danger" onClick={buscarArticulos}>Buscar</button>
-    </div>
+    <div>
+      <Header productRef={productRef}></Header>
       <div className="pt-5 justify-content-center justify-content-between">
         <Product items={searchitems}></Product>
       </div>
     </div>
-
-
   )
 
 
