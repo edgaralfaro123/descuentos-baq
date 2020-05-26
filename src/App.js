@@ -28,7 +28,7 @@ const App = () => {
     <div>
       <Header productRef={productRef}></Header>
       <div className="pt-5 justify-content-center justify-content-between">
-        <Product items={searchitems}></Product>
+      <Product items={searchitems}></Product>
       </div>
     </div>
   )
