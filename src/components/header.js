@@ -4,8 +4,12 @@ import { render } from '@testing-library/react';
 const Header = () =>{
     const productRef = useRef();
     const [articulos, setArticulos] = useState([]);
+
+    useEffect(() => {
+        console.log('Se activo useEffect');
+    }, [articulos])
+
     const buscarArticulos = async () => {
-        
         let value=productRef.current.value;
         let url = `https://cuentasporcobrar.herokuapp.com/descuentos/producto/${value}`;
         fetch(url)
@@ -15,7 +19,7 @@ const Header = () =>{
         .then((result)=> {
             //setSearch(result);
             setArticulos(result);
-        render (<div className='col-sm-12 pading'><div>PRUEBA</div></div>
+            render (<div className='col-sm-12 pading'><div>{articulos}</div></div>
 
                 /* articulos.map(
                     <div className='col-sm-3' key={articulos.codigo}>
@@ -41,8 +45,11 @@ const Header = () =>{
         .catch((err)=>{
             console.error(err);
         })
+        
 
     }
+    
+
     return(
         <div className='col-sm-12 pading'>
             <center><a className="display-4"><strong> En cuanto me queda?</strong></a></center>
@@ -52,6 +59,7 @@ const Header = () =>{
         </div>
         
     )
+
 }
 
 export default Header;
