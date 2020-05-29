@@ -7,7 +7,7 @@ import Header from "./components/header";
 const App = () => {
   const productRef = useRef();
   const [searchitems, setSearch] = useState([]);
-
+/* 
   const buscarArticulos = async () => {
     let value=productRef.current.value;
     let url = `https://cuentasporcobrar.herokuapp.com/descuentos/producto/${value}`;
@@ -22,7 +22,7 @@ const App = () => {
     .catch((err)=>{
       console.error(err);
     })
-  }
+  } */
 
   return(
     <div>
