@@ -3,30 +3,9 @@ import React, { useState, useEffect,useRef  } from 'react';
 
 
 
-const Product = () =>{
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+const Product = (props) =>{
+  const {items=[]}={...props}
   //const productRef = useRef();
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-      fetch("https://cuentasporcobrar.herokuapp.com/descuento/listar")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setItems(result);
-        },
-        // Nota: es| importante manejar errores aquí y no en
-        // un bloque catch() para que no interceptemos errores
-        // de errores reales en los componentes.
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )
-  }, [])
-
   return(
     <div className="container">
     <div className="row">
