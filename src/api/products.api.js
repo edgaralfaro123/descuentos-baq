@@ -1,7 +1,20 @@
+import Routes from './routes'
+const {productsUrls}=Routes;
 
 const buscarProductos = () => {
     return new Promise((resolve, reject) => {
-        fetch("https://cuentasporcobrar.herokuapp.com/descuento/listar")
+        const apiPath=productsUrls.listar();
+        fetch(apiPath)
+            .then(res => res.json())
+            .then((result) => resolve(result),(error) => reject(error))
+        }
+    );
+}
+
+const buscarProductosParams = (value) => {
+    return new Promise((resolve, reject) => {
+        const apiPath=productsUrls.filtro(value);
+        fetch(apiPath)
             .then(res => res.json())
             .then((result) => resolve(result),(error) => reject(error))
         }
@@ -9,5 +22,6 @@ const buscarProductos = () => {
 }
 
 export default {
-    buscarProductos
+    buscarProductos,
+    buscarProductosParams
 }

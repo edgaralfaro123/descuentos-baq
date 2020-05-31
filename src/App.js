@@ -25,19 +25,16 @@ const App = () => {
   }, [])
 
   const buscarArticulos = async (value) => {
-    console.log(value);
-      let url = `https://cuentasporcobrar.herokuapp.com/descuentos/producto/${value}`;
-      fetch(url)
-      .then((response) => {
-          return response.json();
-      })
-      .then((result)=> {
-        console.log(result);
-        setItems(result);
-      })
-      .catch((err)=>{
-          console.error(err);
-      })
+    const {buscarProductosParams}=ProductApi;
+    buscarProductosParams(value)
+    .then((res)=>{
+      setIsLoaded(true);
+      setItems(res);
+    })
+    .catch((res)=>{
+      setIsLoaded(true);
+      setError(error);
+    });
   }
   return(
     <div>

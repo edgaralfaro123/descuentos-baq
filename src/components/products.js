@@ -1,11 +1,7 @@
 import React, { useState, useEffect,useRef  } from 'react';
 
-
-
-
 const Product = (props) =>{
   const {items=[]}={...props}
-  //const productRef = useRef();
   return(
     <div className="container">
     <div className="row">
