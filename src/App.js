@@ -37,10 +37,17 @@ const App = () => {
     });
   }
   return(
-    <div>
+    <div style={{backgroundColor: '#f4787a'}}>
       <Header buscar={buscarArticulos}></Header>
-      <div className="pt-5 justify-content-center justify-content-between">
-      <Product items={items}></Product>
+      <div className="pt-5 justify-content-center justify-content-between"  style={{backgroundColor: '#5b4f6c',borderRadius: '1000px 1000px 0px 0px'}}>
+      <h1> </h1>
+      <h1> </h1>
+      <h1> </h1>
+      <h1> </h1>
+      
+      <div className="pt-5 justify-content-center justify-content-between"  style={{backgroundColor: '#5b4f6c'}}>
+        <Product items={items}></Product>
+      </div>
       </div>
     </div>
   )
