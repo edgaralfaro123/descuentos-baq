@@ -40,14 +40,7 @@ const App = () => {
     <div  >
       <Header buscar={buscarArticulos}></Header>
       <div className="pt-5 justify-content-center justify-content-between"  style={{backgroundColor: '#5b4f6c'}}>
-      <h1> </h1>
-      <h1> </h1>
-      <h1> </h1>
-      <h1> </h1>
-      
-      <div className="pt-5 justify-content-center justify-content-between"  style={{backgroundColor: '#5b4f6c'}}>
         <Product items={items}></Product>
-      </div>
       </div>
     </div>
   )
