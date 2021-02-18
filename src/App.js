@@ -37,9 +37,9 @@ const App = () => {
     });
   }
   return(
-    <div style={{backgroundColor: '#f4787a'}}>
+    <div>
       <Header buscar={buscarArticulos}></Header>
-      <div className="pt-5 justify-content-center justify-content-between"  style={{backgroundColor: '#5b4f6c',borderRadius: '1000px 1000px 0px 0px'}}>
+      <div className="pt-5 justify-content-center justify-content-between"  style={{backgroundColor: '#5b4f6c'}}>
       <h1> </h1>
       <h1> </h1>
       <h1> </h1>
