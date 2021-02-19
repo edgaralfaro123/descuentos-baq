@@ -1,14 +1,13 @@
 import React, { useState, useEffect,useRef  } from 'react';
-
+import  back  from '../images/imagenfondoabajo.png'
 const Product = (props) =>{
   const {items=[]}={...props}
   console.log(items);
   return(
     <div>
-      <div className="container" >
+      {/* <div className="container" > */}
       <div className="row">
       {items.length>0 && 
-      
         items.map(item =>(
           <div className='col-sm-3' key={item.codigo}>
             <div style={styles.well}>
@@ -29,10 +28,10 @@ const Product = (props) =>{
           </div>
         
         ))}
-
+        <img src={ back } className="card-img-top"   alt="Logo" />
       </div>
       </div>
-    </div>
+    /* </div> */
   )
 
 }
@@ -42,7 +41,7 @@ const styles = {
 
     borderRadius: "26px",
     background: "white",
-    boxShadow:  "5px 5px 18px #b7b4a8,-5px -5px 18px #ffffff"
+    /* boxShadow:  "5px 5px 18px #b7b4a8,-5px -5px 18px #ffffff" */
   }
 
 };

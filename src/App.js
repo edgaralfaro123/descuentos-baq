@@ -37,9 +37,9 @@ const App = () => {
     });
   }
   return(
-    <div  >
+    <div>
       <Header buscar={buscarArticulos}></Header>
-      <div className="pt-5 justify-content-center justify-content-between"  style={{backgroundColor: '#5b4f6c'}}>
+      <div className="pt-5 "  style={{backgroundColor: '#5b4f6c'}}>
         <Product items={items}></Product>
       </div>
     </div>
